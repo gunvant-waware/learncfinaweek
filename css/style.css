@@ -1,0 +1,78 @@
+body{
+	font-family: 'Source Code Pro', sans-serif;
+	font-size: 16px;
+	max-width: 1100px;
+	margin: auto;
+	line-height: 1.9;
+}
+
+h1, h2,h3,h4,h5,h6{
+	font-family: 'Calibri', sans-serif;
+}
+
+.em{
+	font-style: italic;
+	font-weight: 500;
+	color: #fff;
+	border: 1px solid green;
+	background: green;
+	padding: 10px;
+}
+
+.error{
+	background: red;
+	font-family: 'Monaco', sans-serif;
+	color: #FFF;
+	padding: 5px;
+}
+
+.error-image {
+    margin: auto;
+    text-align: center;
+}
+.footer {
+    margin: auto;
+    height: 30px;
+    background: #CCC;
+    padding: 20px 10px;
+}
+
+.footer-container .social-links {
+    float: left;
+    left: 0;
+}
+
+.footer-container .site-links {
+    float: right;
+    right: 0;
+}
+
+.-lucee-dump {
+  margin: 10px 0;
+  background: #eaeaea;
+  padding: 10px;    
+}
+
+.code, .em, em{
+	background: #eaeaea;
+	padding: 2px 5px;
+	font-weight: 300;
+}
+
+.underline{
+	text-decoration: underline;
+}
+
+.image{
+	text-align: center;
+	margin: auto;
+}
+
+.cf-code pre {
+    border-left: 10px solid #eaeaea;
+    color: #17766dfc;
+    padding: 5px 20px;
+    margin: 20px 0;
+    font-family: 'Monaco';
+    font-size: 14px;
+}
