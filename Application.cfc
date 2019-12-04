@@ -2,6 +2,7 @@
 	
 	<!--- Application Variables --->
 	<cfset this.datasource = "testing" />
+	<cfset this.sessionManagement = true/>
 
 	<!--- When the very first request is made or the first CFC request is made --->
 	<cffunction name="onApplicationStart">

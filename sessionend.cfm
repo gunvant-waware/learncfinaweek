@@ -1,6 +1,6 @@
 <cfprocessingdirective pageEncoding="utf-8" suppressWhitespace="true">
-	<cfcookie name="cfid" expires="now" value="" preserveCase="yes"/>
-	<cfcookie name="cftoken" expires='now' value="" preserveCase="yes"/>
+	<cfcookie name="cfid" expires="now" value=""/>
+	<cfcookie name="cftoken" expires='now' value=""/>
 	<!--- <cfset sessionInvalidate()/> --->
 	<cfdump var="#session#">
 	<h1>The session has been cleared!</h1>
