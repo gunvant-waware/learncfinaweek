@@ -42,9 +42,10 @@
 						<a href="https://www.instagram.com/imgunvant/">Instagram</a>
 					</div>
 					<div class="site-links">
-						<a href="/about/">About</a>
-						<a href="/contact/">Contact</a>
-						<a href="/privacy-policy/">Privacy Policy</a>
+						<a href="./">Home</a>
+						<a href="./about/">About</a>
+						<a href="./contact/">Contact</a>
+						<a href="./privacy-policy/">Privacy Policy</a>
 					</div>
 				</div>
 			</div>

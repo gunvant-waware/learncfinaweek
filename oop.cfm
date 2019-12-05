@@ -173,4 +173,34 @@
 			&lt;/cfscrip&gt;>
 		</pre>
 	</div>
+
+	<h1>Code Practice</h1>
+	<p>The Init() in the Person.cfc is a private one</p>
+	<cftry>
+	<!--- Create an instance of the person. --->
+	<cfset objPerson = CreateObject( "component", "Person" ).Init(
+    Name = "Ben Nadel"
+    ) />
+    <cfcatch>
+    	<p class="error"><cfoutput>#cfcatch.message#</cfoutput></p>
+    </cfcatch>
+  </cftry>
+
+    <!--- Create an instance of the gendered person. --->
+		<cfset objBoy = CreateObject( "component", "GenderedPerson" ).Init(
+		    Name = "Ben Nadel",
+		    Gender = "Male"
+		    ) />
+		<p>As above error the init() in the Person.cfc is private funtion and can not instantiated while creating an object. In order to initiate the <span class="code">Person.cfc</span>, you can use <span class="code">super.init(arguments)</span> in <span class="code">GenderedPerson.cfc</span> which extends the <span class="code">Person.cfc</span> will initiate the <span class="code">Person.cfc</span></p>
+		<p>The <span class="code">objBoy</span> instance with <span class="code">init()</span> method</p>
+		<cfdump var="#objBoy#">
+
+
+
+		<cfoutput>
+		    #objBoy.GetName()#<br />
+		    #objBoy.GetGender()#<br/>
+		    #objBoy.GetAddress()#
+		</cfoutput>
+		<p>User <span class="code">super</span> keyword to access the private functions of the base/extended component</p>
 </cfprocessingdirective>
