@@ -9,5 +9,6 @@
         <li><a href="database.cfm">Database</a></li>
         <li><a href="sessionend.cfm">Session End</a></li>
         <li><a href="applicationStop.cfm">Application Stop</a></li>
+        <li><a href="ajax.cfm">AJAX</a></li>
     </ul>
 </cfprocessingdirective>

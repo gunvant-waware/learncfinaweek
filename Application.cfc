@@ -20,6 +20,7 @@
 		<cfargument name="targetPage" required="false" />
 		<cfoutput>
 			<link rel="stylesheet" type="text/css" href="css/style.css?#createUUID()#">
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		</cfoutput>
 		<cfdump var="The request started"/>
 	</cffunction>
