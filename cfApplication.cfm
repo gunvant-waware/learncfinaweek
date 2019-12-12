@@ -28,7 +28,7 @@
 			<p class="em">A session time-out setting is reached. This event is not triggered when the application ends or the server shuts down.</p>
 		</li>
 		<li>
-			<strong>onApplicationEnd:</strong> And of course, there's an onApplicationEnd event, too. Lovely symmetry, isn't it? This event is broadcast when your application times out (hasn't been used in a while), or if ColdFusion is shutting down.
+			<strong>onApplicationEnd:</strong> And of course, there's an onApplicationEnd event, too. Lovely symmetry, isn't it? This event is broadcast when your application times out (hasn't been used in a while), or if ColdFusion server is shutting down.
 			<p class="em">The application ends: when the application times out or the server shuts down.</p>
 		</li>
 		<li>
@@ -39,7 +39,18 @@
 			<strong>onError:</strong> Lastly, there is an onError event broadcast in the event of an un-caught exception, including any you might manually throw. This gives you a last line of defense to deal with any errors that might have slipped through the cracks in your application.
 			<p class="em">When an exception occurs that is not caught by a try/catch block.</p>
 		</li>
+
+		<li>
+			<strong>NOTE:</strong> 
+			<p class="em">1. The default Session timeout is 20 minutes.<br/>2. The default application timeout is 2 days.</p>
+			<p class="em">You can always overwrite this setting in Application.cfc or Application.cfm using <span class="code">this.sessionTimeout=createTimeSpan(0,0,20,0)</span> and <span class="code">this.applicationTimeout=createTimeSpan(2,0,0,0)</span></p>
+		</li>
 	</ul>
 
 	<h4 class="em">The onApplicationEnd and onSessionEnd methods do not execute in the context of a page request, so they cannot access request variables or display information to the user. The onMissingTemplate method is triggered when a URL specifies a CFML page that does not exist. The OnError method does not always execute in the context of a request; use its Event argument to determine the context.</h4>
+	<div class="">
+		<p>Therefore, sessions always terminate after a time-out period of inactivity. If the user does not access a page of the application within this time-out period, ColdFusion interprets this as the end of the session and clears any variables associated with that session.</p>
+		<p class="em">A ColdFusion session uses cfid and cftoken to identify the client. Whenever a client visits your app within a fixed time, the page requests are part of the same session. By default, the time is set to 20 minutes. If more than 20 minutes have passed and the client has not issued any new request, the page times out.</p>
+		<p class="code">This is not applicable for the page reloads requests. If your sessionTimeout is 5 minutes and you reload the page for 5 minutes,then your session will be expired. :)</p>
+	</div>
 </cfprocessingdirective>

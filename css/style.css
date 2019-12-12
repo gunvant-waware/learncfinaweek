@@ -77,3 +77,21 @@ h1, h2,h3,h4,h5,h6{
     font-family: 'Monaco';
     font-size: 14px;
 }
+
+.event {
+    background: #c24f4f;
+    color: #FFF;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in;
+}
+
+.blinking{
+    animation: blinkingText 3s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #FFF;}
+    49%{    color: #FFF;}
+    50%{    color: transparent; }
+    99%{    color: #FFF;}
+    100%{   color: #FFF;}
+}
