@@ -31,8 +31,11 @@
 
 	<cffunction name="onRequestStart">
 		<cfargument name="targetPage" required="false" />
-		<cfoutput><p class="event blinking">onRequestStart: The request started for #cgi.SCRIPT_NAME#</p></cfoutput>
-		<cfset addApplicationLog('onRequestStart', 'Page request started for: #cgi.SCRIPT_NAME#') />
+		<cfoutput>
+			<link rel="stylesheet" type="text/css" href="css/style.css?#createUUID()#">
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		</cfoutput>
+		<cfdump var="The request started"/>
 	</cffunction>
 
 	<!--- If you implement this method you need to include the target page else your page will not be displayedsd --->
