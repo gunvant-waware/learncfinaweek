@@ -102,6 +102,7 @@
 	<cffunction name="addApplicationLog" access="public">
 		<cfargument name="eventName" default="" />
 		<cfargument name="comment" default="" />
+		<cftry>
 		<cfquery datasource="#this.datasource#">
 			INSERT INTO application_logs(event_name, comment, created_at) VALUES(
 				<cfqueryparam value="#arguments.eventName#" cfsqltype="cf_sql_varchar"/>,
@@ -109,6 +110,8 @@
 				now());
 		</cfquery>
 		<cflog text="#arguments.eventName#: #arguments.comment#, Date: #dateTimeFormat(now(), 'dd/nn/yyyy hh:mm:ss tt')#" application="Yes" type="information" log="Application"/>
+		<cfcatch type="any"></cfcatch>
+	</cftry>
 	</cffunction>
 
 </cfcomponent>

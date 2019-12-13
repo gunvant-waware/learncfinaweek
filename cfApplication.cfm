@@ -51,6 +51,6 @@
 	<div class="">
 		<p>Therefore, sessions always terminate after a time-out period of inactivity. If the user does not access a page of the application within this time-out period, ColdFusion interprets this as the end of the session and clears any variables associated with that session.</p>
 		<p class="em">A ColdFusion session uses cfid and cftoken to identify the client. Whenever a client visits your app within a fixed time, the page requests are part of the same session. By default, the time is set to 20 minutes. If more than 20 minutes have passed and the client has not issued any new request, the page times out.</p>
-		<p class="code">This is not applicable for the page reloads requests. If your sessionTimeout is 5 minutes and you reload the page for 5 minutes,then your session will be expired. :)</p>
+		<p class="code">Bug in Lucee: This is not applicable for the page reloads requests. If your sessionTimeout is 5 minutes and you reload the page for 5 minutes,then your session will be expired. :)</p>
 	</div>
 </cfprocessingdirective>
