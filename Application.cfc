@@ -6,7 +6,7 @@
 	<!--- The default session timeout is 20 minutes --->
 	<cfset this.sessionTimeout = createTimeSpan(0,0,0,5) />
 	<!--- The default application timeout is 2 days --->
-	<cfset this.applicationTimeout = createTimeSpan(0,0,0,10) />
+	<cfset this.applicationTimeout = createTimeSpan(2,0,0,0) />
 	<cfset this.hostName = "http://#cgi.HTTP_HOST#/learncfinaweek"/>
 
 	<cfoutput>
@@ -24,6 +24,9 @@
 
 	<!--- WHen the session started for the first time --->
 	<cffunction name="onSessionStart">
+		<cfif isDefined('application.sessionDateInitialized')>
+			<cfset addApplicationLog('onSessionEnd', 'Session Ended..') />
+		</cfif>
 		<cfset application.sessionDateInitialized = now() />
 		<p class="event blinking">onSessionStart: The session started for the first time</p>
 		<cfset addApplicationLog('onSessionStart', 'Session started for the first time') />
@@ -35,7 +38,8 @@
 			<link rel="stylesheet" type="text/css" href="css/style.css?#createUUID()#">
 			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		</cfoutput>
-		<cfdump var="The request started"/>
+		<cfoutput><p class="event blinking">onRequestStart: The request started for #cgi.SCRIPT_NAME#</p></cfoutput>
+		<cfset addApplicationLog('onRequestStart', 'Page on request started for: #cgi.SCRIPT_NAME#') />
 	</cffunction>
 
 	<!--- If you implement this method you need to include the target page else your page will not be displayedsd --->
