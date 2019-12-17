@@ -8,7 +8,7 @@
 	<!--- The default application timeout is 2 days --->
 	<cfset this.applicationTimeout = createTimeSpan(2,0,0,0) />
 	<cfset this.hostName = "http://#cgi.HTTP_HOST#/learncfinaweek"/>
-	<cfset this.sessionStorage = "cookies" />
+	<cfset this.sessionStorage = "cookie" />
 	<cfoutput>
 		<link rel="stylesheet" type="text/css" href="#this.hostName#/css/style.css?#createUUID()#">
 	</cfoutput>
