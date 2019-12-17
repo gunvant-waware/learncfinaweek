@@ -1,4 +1,3 @@
-TEST
 <!---Sending an ajax using jQuery--->
 <script type="text/javascript">
 			$(document).ready(function () {
