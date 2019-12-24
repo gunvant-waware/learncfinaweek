@@ -1,3 +1,20 @@
+<!---<cfcomponent>
+
+	<cfset this.sessionManagement = true />
+	<cfset this.sessionTimeout = createTimeSpan(0,0,0,5) />
+
+	<cffunction name="onSessionStart">
+		<cfset session.uuid = createUUID() />
+		<cfdump var="Session Started!">
+		<cfdump var="#session#">
+	</cffunction>
+
+	<cffunction name="onSessionEnd">
+		<cfdump var="Session Started!" />
+	</cffunction>
+
+</cfcomponent>--->
+
 <cfcomponent hint="ColdFusion Component - Application.cfc" displayname="Application.cfc">
 	
 	<!--- Application Variables --->
@@ -27,6 +44,7 @@
 		<cfif isDefined('application.sessionDateInitialized')>
 			<cfset addApplicationLog('onSessionEnd', 'Session Ended..') />
 		</cfif>
+		<cfdump var="#session#">
 		<cfset application.sessionDateInitialized = now() />
 		<p class="event blinking">onSessionStart: The session started for the first time</p>
 		<cfset addApplicationLog('onSessionStart', 'Session started for the first time') />
@@ -40,6 +58,7 @@
 		</cfoutput>
 		<cfoutput><p class="event blinking">onRequestStart: The request started for #cgi.SCRIPT_NAME#</p></cfoutput>
 		<cfset addApplicationLog('onRequestStart', 'Page on request started for: #cgi.SCRIPT_NAME#') />
+		<cfreturn />
 	</cffunction>
 
 	<!--- If you implement this method you need to include the target page else your page will not be displayedsd --->
