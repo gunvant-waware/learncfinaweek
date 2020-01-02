@@ -94,7 +94,9 @@
 		</div>
 		<p class="em">This footer above is added on the onRequestEnd() in Application.cfc, I want this to be added on every page when the request is successful.</p>
 		<cfset addApplicationLog('onRequestEnd', 'The request Completed Successfully: #cgi.SCRIPT_NAME#') />
+		
 		<p class="event blinking">onRequestEnd: The request ends here..</p>
+		
 	</cffunction>
 
 	<cffunction name="onSessionEnd">

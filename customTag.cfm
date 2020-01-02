@@ -25,7 +25,7 @@
 	<cfset variables.myStruct['lastName'] = 'Wawarya' />
 	<p>Passing as an attributes to the tags</p>
 	<cfmodule template="greeting.cfm" firstName="Gunvant Madhukar" lastName="Waware"/>
-	<h3>OR</h3>
+	<h3 class="center">OR</h3>
 	<p>Using AttributeCollection in cfmodule</p>
 	<cfmodule template="greeting.cfm" attributecollection = "#variables.myStruct#"/>
 </cfprocessingdirective>
